@@ -1,7 +1,7 @@
 {
   "name": "phasetwo-api-client",
   "version": "0.1.0",
-  "description": "JavaScript bindings for interacting with the Phase Two API",
+  "description": "Isomorphic JavaScript client for interacting with the Phase Two API",
   "repository": {
     "type": "git",
     "url": "https://github.com/p2-inc/phasetwo-api-client.git"
