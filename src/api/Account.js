@@ -1,4 +1,4 @@
-import request from './request';
+import request from '../util/request';
 
 /**
  * An Account object used to interact with the Keycloak Account API.

@@ -1,5 +1,5 @@
 import Account from './Account';
-import request from './request';
+import request from '../util/request';
 
 // Note: 'mock' prefix is necessary for these to be usable inside jest.mock()
 const mockRealmUrl = 'https://realm.url';
@@ -14,7 +14,7 @@ const mockResponse = {
 };
 
 // TODO: move this mock to its own module
-jest.mock('./request', () => ({
+jest.mock('../util/request', () => ({
   __esModule: true,
   default: jest.fn((url, options) => {
     if (url === mockAccountUrl) {
