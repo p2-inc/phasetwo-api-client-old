@@ -1,0 +1,36 @@
+{
+  "name": "phasetwo-api-client",
+  "version": "0.1.0",
+  "description": "JavaScript bindings for interacting with the Phase Two API",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/p2-inc/phasetwo-api-client.git"
+  },
+  "private": true,
+  "main": "dist/phasetwo-api-client.umd.js",
+  "module": "dist/phasetwo-api-client.es.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "clean": "rm -rf dist",
+    "prepare": "npm run build",
+    "release": "np",
+    "test": "jest",
+    "test-watch": "npm test -- --watchAll"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.9.6",
+    "@babel/runtime": "^7.9.6",
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "@rollup/plugin-node-resolve": "^7.1.3",
+    "babel-jest": "^26.0.1",
+    "jest": "^26.0.1",
+    "np": "^6.2.3",
+    "rollup": "^2.7.2"
+  }
+}
