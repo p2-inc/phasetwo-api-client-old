@@ -21,7 +21,7 @@
     "test-watch": "npm test -- --watchAll"
   },
   "dependencies": {
-    "node-fetch": "^2.6.0"
+    "isomorphic-unfetch": "^3.0.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.9.6",
