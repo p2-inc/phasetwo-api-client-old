@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+import fetch from 'isomorphic-unfetch';
 
 /*
  * A modified version of fetch() which throws an error on non-200 status codes.
