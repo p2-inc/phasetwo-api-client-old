@@ -7,13 +7,17 @@
     "url": "https://github.com/p2-inc/phasetwo-api-client.git"
   },
   "private": true,
-  "main": "dist/phasetwo-api-client.umd.js",
+  "source": "src/index.js",
+  "main": "dist/phasetwo-api-client.js",
   "module": "dist/phasetwo-api-client.es.js",
+  "umd:main": "dist/phasetwo-api-client.umd.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c",
+    "build": "microbundle --name PhasetwoApiClient --no-sourcemap",
+    "build:debug": "npm run build -- --output debug --no-compress",
+    "dev": "microbundle watch",
     "clean": "rm -rf dist",
     "prepare": "npm run build",
     "release": "np",
@@ -26,11 +30,9 @@
   "devDependencies": {
     "@babel/preset-env": "^7.9.6",
     "@babel/runtime": "^7.9.6",
-    "@rollup/plugin-commonjs": "^11.1.0",
-    "@rollup/plugin-node-resolve": "^7.1.3",
     "babel-jest": "^26.0.1",
     "jest": "^26.0.1",
-    "np": "^6.2.3",
-    "rollup": "^2.7.2"
+    "microbundle": "^0.12.0",
+    "np": "^6.2.3"
   }
 }
