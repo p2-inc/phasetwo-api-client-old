@@ -1,5 +1,6 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import filesize from 'rollup-plugin-filesize';
 import builtins from 'builtin-modules';
 import pkg from './package.json';
 
@@ -12,7 +13,7 @@ export default [
       format: 'umd',
       name: 'PhasetwoApiClient',
     },
-    plugins: [resolve({ browser: true }), commonjs()],
+    plugins: [resolve({ browser: true }), commonjs(), filesize()],
   },
 
   // CommonJS (for Node) and ES module (for bundlers) build.
@@ -23,5 +24,6 @@ export default [
       { file: pkg.main, format: 'cjs' },
       { file: pkg.module, format: 'es' },
     ],
+    plugins: [filesize()],
   },
 ];
