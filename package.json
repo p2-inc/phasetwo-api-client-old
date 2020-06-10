@@ -7,7 +7,8 @@
     "url": "https://github.com/p2-inc/phasetwo-api-client.git"
   },
   "private": true,
-  "main": "dist/phasetwo-api-client.umd.js",
+  "browser": "dist/phasetwo-api-client.umd.js",
+  "main": "dist/phasetwo-api-client.cjs.js",
   "module": "dist/phasetwo-api-client.es.js",
   "files": [
     "dist"
