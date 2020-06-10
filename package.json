@@ -18,7 +18,7 @@
     "build": "microbundle --name PhasetwoApiClient --no-sourcemap --no-compress",
     "build:debug": "npm run build -- --output debug --no-compress",
     "dev": "microbundle watch",
-    "clean": "rm -rf dist",
+    "clean": "rm -rf debug dist",
     "prepare": "npm run build",
     "release": "np",
     "test": "jest",
