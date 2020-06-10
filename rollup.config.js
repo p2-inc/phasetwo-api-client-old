@@ -3,19 +3,25 @@ import commonjs from '@rollup/plugin-commonjs';
 import builtins from 'builtin-modules';
 import pkg from './package.json';
 
-export default {
-  input: './src/index.js',
-  output: [
-    {
-      file: pkg.main,
-      format: 'umd', // Universal Module Definition (browser || Node)
+export default [
+  // browser-friendly UMD build
+  {
+    input: 'src/index.js',
+    output: {
+      file: pkg.browser,
+      format: 'umd',
       name: 'PhasetwoApiClient',
     },
-    {
-      file: pkg.module,
-      format: 'es', // ES6 import/export
-    },
-  ],
-  plugins: [resolve(), commonjs()],
-  external: builtins,
-};
+    plugins: [resolve({ browser: true }), commonjs()],
+  },
+
+  // CommonJS (for Node) and ES module (for bundlers) build.
+  {
+    input: 'src/index.js',
+    external: [].concat(builtins, 'isomorphic-unfetch'),
+    output: [
+      { file: pkg.main, format: 'cjs' },
+      { file: pkg.module, format: 'es' },
+    ],
+  },
+];
