@@ -36,11 +36,11 @@ class Account {
 
     return request(url, { headers })
       .then((res) => {
-        return res.response;
+        return res.json();
       })
-      .catch((res) => {
-        console.error('❌ Server error:\n', JSON.stringify(res, null, 2));
-        return res.response;
+      .catch((err) => {
+        console.error('❌ Error getting Account API response:\n', err);
+        throw err;
       });
   }
 }
